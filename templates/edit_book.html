@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Updating: {{ book.name}}{% endblock %}
+
+{% block content %}
+
+    <div>
+        Updating the book: {{ book.name }}
+    </div>
+
+    <div>
+        <img src="{{ book.image.url }}" alt="">
+    </div>
+
+    <div>
+        <form action="{% url 'edit_book' id=book.id %}" method='POST' enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div>
+                <button type="submit">Update</button>
+            </div>
+
+        </form>
+    </div>
+
+{% endblock content %}
+

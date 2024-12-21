@@ -1,0 +1,16 @@
+{% extends "workspace/base.html" %}
+
+{% block title %}Home{% endblock title %}
+
+{% block work_content %}
+
+    <div>
+        <form action="{% url "create_genre" %}" method='POST'>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div>
+                <button type='submit'>Create</button>
+            </div>
+        </form>
+    </div>
+{% endblock work_content %}

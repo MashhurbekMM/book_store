@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <div class='hello'>Hello World!!!<br>Welcome to the our bookstore</div>
+
+
+    <div class="flex">
+        <div>
+            <div class='books_block'>
+                {% for book in book_list %}
+                    <div class='book' id='book_id_{{ book.id}}'>
+                        <a href="{% url "book_detail" id=book.id %}">
+                            <img src='{{book.image.url}}' alt="{{book.name}}">
+                        </a>
+                        <div class='book_info'>
+                            <h4>{{book.name}}</h4>
+                            <div class="flex">
+                                <div>{{ book.year}}</div>
+                                <div>{{ book.duration}}</div>
+                            </div>
+                            <div>{{book.director.full_name}}</div>
+
+                            <div class="update_delete_btns">
+                                <a class='nav_link' href="{% url 'edit_book' id=book.id %}">изменить книгу</a><hr>
+                                <a class='nav_link' href="{% url 'delete_book' id=book.id %}">удалить книгу</a>
+                            </div>
+                        </div>
+
+                    </div>
+                {% empty %}
+                    <h1> Нету книг </h1>
+                {% endfor %}
+            </div>
+
+            {% if book_list.has_previous or book_list.has_next %}
+                <div class="pagination">
+                    <div class='paginations_btns'>
+                        {% if book_list.has_previous %}
+                            <a class="page_link" href="?offset={{ book_list.previous_page_number}}"><</a>
+                        {% endif %}
+
+                        {% for i in book_list.paginator.page_range %}
+                            {% if book_list.number == i  %}
+                                <span class="page_link">{{ i }}</span>
+                            {% else %}
+                                <a class="page_link" href="?offset={{ i }}">{{ i }}</a>
+                            {% endif %}
+                        {% endfor %}
+
+                        {% if book_list.has_next %}
+                            <a class="page_link" href="?offset={{ book_list.next_page_number}}">></a>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endif %}
+
+        </div>
+
+        <div>
+            {% include 'components/sidebar.html' %}
+        </div>
+
+    </div>
+    
+
+{% endblock content %}
+
+
+
+   

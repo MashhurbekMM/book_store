@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Register{% endblock title %}
+
+{% block content %}
+
+    <h2>Register</h2>
+        <form method="post" action="{% url 'register' %}">
+            {% csrf_token %}
+            <label>Email:</label>
+            <input type="email" name="email" required><br><br>
+
+            <label>Password:</label>
+            <input type='passwod' name="password" required><br><br>
+
+            <label>Confirm Password:</label>
+            <input type="password" name="confirm_password" required><br><br>
+
+            <button type="submit">Register</button>
+        </form>
+        {% if message %}
+            <p style="color: red;">{{ message}}</p>
+        {% endif %}
+    <p> Already have an account? <a class="nav_link" href="{% url 'login_profile' %}">Login here</a></p>
+{% endblock content %}

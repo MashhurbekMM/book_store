@@ -1,0 +1,192 @@
+/* body{
+    margin: 0;
+    padding: 0;
+    background-image: url('/static/static_root/images/movie_background.jpg');
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+}
+
+.container{
+    width: 90%;
+    min-width: 1200px;
+    margin: 0 auto;
+} */
+
+.hello{
+    text-align: center;
+    color: red;
+    font-size: 40px;
+    padding-top: 25px;
+    padding-bottom: 30px;
+}
+
+
+.books_block{
+    display: flex; 
+    gap: 20px;
+    width: 100px; 
+    justify-content: space-between;
+    margin-top: 90px; 
+
+}
+.flex{
+    display: flex;
+    justify-content: space-between;
+}
+
+img{
+    width: 200px;
+    height: 300px;
+}
+
+
+
+.book{
+    /* display: flex;
+    justify-content: center; */
+    align-items: center;
+    gap: 60px;
+
+}
+
+/* .book_info{
+    padding: 0 10px;
+}
+
+.update_delete_btns{
+    display: flex;
+    justify-content: space-around;
+} */
+
+
+img{
+    width: 250px;
+}
+.text{
+    width: 500px;
+    height: 250px;
+    
+}
+.text1{
+    font-size: 20px;
+    color: red;
+}
+
+
+/* Header*/
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    border: 1px solid;
+    margin-bottom: 50px;
+}
+
+.logo{
+    display: flex;
+    gap: 80px;
+}
+
+/* .header_cls{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav{
+    display: flex;
+    gap: 30px;
+
+}
+
+.nav_link{
+    color: white;
+}
+
+.nav_link:hover{
+    color: red;
+    text-decoration: none;
+} */
+
+
+
+
+
+
+/* Footer*/
+
+footer {
+    display: flex;
+    justify-content: center;
+    border-top: 1 px solid;
+    margin-top: 100px;
+}
+
+
+
+/* Create_book */
+
+.span_red{
+    color: red;
+}
+.vid{
+    display: flex;
+}
+
+
+/*sidebar*/
+.sidebar{
+    width: 300px;
+    margin-top: 90px;
+}
+
+
+/*Paginator*/
+
+.pagination{
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+.pagination_btns{
+    display: flex;
+    gap: 10px;
+}
+.page_link{
+    border: 1px solid white;
+    padding: 6px 10px;
+    color: white;
+    background-color: rgb(24, 24, 24);
+    text-decoration: none;
+}
+
+
+/*Workspace*/
+
+.workspace_main{
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+
+/*Comments*/
+
+.comment{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    align-items: end;
+}
+
+.comment_date{
+    vertical-align: bottom;
+}

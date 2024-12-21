@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %} {{ book.name}} {% endblock  %}
+
+{% block content %}
+    <div class='book'>
+        <div>
+            <img src="{{ book.image.url }}" alt="">
+        </div>
+        <div class='text'>
+            <div class="text1">Название книги: {{ book.name }}</div>
+            <div class='text2'>Автор книги: {{ book.director.full_name }}</div>
+            <div class='text3'>Год выпуска: {{ book.year }}</div>
+            <div class='text4'>Краткое описание книги: {{ book.description }}</div>
+            <div class='text2'>Рейтинг: {{ book.rating }}</div>
+            <div class='text2'>Язык: {{ book.language }}</div>
+
+            <span class="font-medium">Жанр:</span>
+            {% for genre in book.genres.all %}
+                <span>{{ genre.name }}</span>/
+            {% endfor %}
+        </div>
+    </div>
+
+    <div>{{book.content|safe}}</div>
+
+    {% if book.comments.all %}
+        <div class="comment_container">
+            <h2>Comments</h2>
+
+            {% for comment in book.comments.all  %}
+                <div class='comment'>
+                    <div>
+                        <p>{{ comment.name }}</p>
+                        <p>{{ comment.text }}</p>
+                    </div>
+                    <div class="comment_date">
+                        {{ comment.date }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+{% endblock content %}
+
+    

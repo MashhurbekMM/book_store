@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+    <div>
+        <form action="{% url 'create_genre' %}" method="POST">
+            {% csrf_token %}
+            {{ form.as_p}}
+            <div>
+                <button type='submit'>Create</button>
+            </div>
+        </form>
+    </div>
+
+{% endblock content %}
